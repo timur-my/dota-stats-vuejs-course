@@ -1,24 +1,3 @@
 # vue-course
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Этот сайт будет инфографикой по игрокам из Dota 2, т.е. будет список игроков с самым высоким рейтингом и у каждого из них можно развернуть и посмотреть их статистику, допустим по последним матчам. Апи: https://docs.opendota.com/
