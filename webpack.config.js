@@ -35,11 +35,19 @@ module.exports = {
                   },
                   'postcss-loader'
                 ]
-              },
+            },
+            {
+                test: /\.scss?$/,
+                use: [
+                  'vue-style-loader',
+                  'css-loader',
+                  'sass-loader'
+                ]
+            },
             {
                 test: /\.(jpe?g|gif|png|svg|woff|ttf|eot|wav|mp3)$/,
                 loader: 'file-loader'
-              }
+            }
         ]
     },
     plugins: [
@@ -49,7 +57,13 @@ module.exports = {
             'typeof window': JSON.stringify('object')
         }),
         new webpackCopy([
-            { from: 'stubs/index.html' }
+            { from: 'stubs/index.html' },
+            { from: 'node_modules/vue/dist/vue.min.js', to: 'extLib/vue.min.js' },
+            { from: 'node_modules/vue-material/dist/vue-material.min.js', to: 'extLib/vue-material.min.js' }
           ])
-    ]
+    ],
+    externals: {
+        vue: 'Vue',
+        'vue-material': 'VueMaterial'
+    }
 };
