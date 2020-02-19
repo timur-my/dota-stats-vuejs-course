@@ -1,6 +1,6 @@
 <template>
   <div>
-    Вторая страница
+    Здесь будет список профессиональных матчей
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'two-page',
+  name: 'pro-matches',
   components: {}
 }
 </script>

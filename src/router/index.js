@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ProPlayers from '../dashboards/pro-players.vue'
-import TwoPage from '../dashboards/two-page.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +11,9 @@ const routes = [
     component: ProPlayers
   },
   {
-    path: '/two-page',
-    name: 'two-page',
-    component: TwoPage
+    path: '/pro-matches',
+    name: 'pro-matches',
+    component: ()=> import(/* webpackChunkName: "pro-matches" */ '../dashboards/pro-matches.vue')
   },
 ]
 

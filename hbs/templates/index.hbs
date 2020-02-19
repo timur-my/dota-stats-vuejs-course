@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="https://unpkg.com/vue-material/dist/theme/black-green-light.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VueJS</title>
+    <title>Dota 2 - stats</title>
 </head>
 <body>
+     <script type="text/javascript">
+       window.config = {{{toJSON config}}};
+       window.navigation = {{{toJSON navigation}}};
+    </script>
     <script src="./extLib/vue.min.js"></script>
     <script src="./extLib/vue-material.min.js"></script>
-    <div id="app">Этот текст будет заменен на vuejs приложение</div>
+    <div id="app">Упс, похоже Vue приказал долго жить ;(</div>
     <script src="./main.js"></script>
 </body>
 </html>

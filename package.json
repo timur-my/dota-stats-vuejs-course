@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode development",
-    "start": "nodemon ./stubs/server.js"
+    "build": "webpack",
+    "start": "nodemon ./stubs"
   },
   "author": "",
   "license": "ISC",
@@ -25,17 +25,19 @@
     "cssnano": "4.1.10",
     "express": "4.17.1",
     "file-loader": "5.0.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "4.13.1",
     "postcss-import": "12.0.1",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.7.0",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "8.0.2",
     "vue-loader": "15.8.3",
     "vue-template-compiler": "2.6.11",
     "webpack": "4.41.5",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "3.3.10",
     "webpack-dev-middleware": "3.7.2",
-    "webpack-hot-client": "4.1.2",
-    "vue-router": "^3.1.5"
+    "webpack-hot-middleware": "2.25.0",
+    "vue-router": "3.1.5",
+    "glob": "7.1.6",
+    "hbs": "4.1.0"
   }
 }

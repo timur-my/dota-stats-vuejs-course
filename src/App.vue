@@ -10,7 +10,7 @@
 
             <md-tabs class="md-primary">
             <md-tab id="tab-pro-players" to="/" md-label="Pro players" exact></md-tab>
-            <md-tab id="tab-two-page" to="/two-page" md-label="Two page"></md-tab>
+            <md-tab id="tab-pro-matches" to="/pro-matches" md-label="Pro matches"></md-tab>
           </md-tabs>
           </div>
         </md-app-toolbar>
