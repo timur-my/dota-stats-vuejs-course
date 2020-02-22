@@ -29,3 +29,7 @@ export default {
   components: {}
 }
 </script>
+
+<style lang="scss" scoped>
+  @import url('./components/app-style.scss');
+</style>

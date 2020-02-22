@@ -41,9 +41,14 @@
 <script>
 export default {
   name: 'PlayerCard',
-  props: {
-    players: Array
-  }
+  computed: {
+    players() {
+      return this.$store.getters.getProPlayersSlice(30)
+    } 
+  },
+  created: async function () {
+    await this.$store.dispatch('getProPlayers')
+  },
 }
 </script>
 
