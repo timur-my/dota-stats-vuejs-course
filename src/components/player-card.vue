@@ -31,7 +31,7 @@
         </md-card-header>
 
         <md-card-actions>
-          <md-button>Matches list</md-button>
+          <md-button @click="onSelect(player)">Matches list</md-button>
         </md-card-actions>
       </md-card>
     </div>
@@ -45,6 +45,11 @@ export default {
     players() {
       return this.$store.getters.getProPlayersSlice(30)
     } 
+  },
+  methods: {
+    onSelect (player) {
+      this.$store.dispatch('getPlayerMatches', {account_id: player.account_id, limit: 30})
+    }
   },
   created: async function () {
     await this.$store.dispatch('getProPlayers')

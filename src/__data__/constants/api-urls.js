@@ -1,3 +1,3 @@
 export const API_URLS = {
-    PRO_PLAYERS: 'https://api.opendota.com/api/proPlayers/'
+    OPENDOTA_MAIN_URL: 'https://api.opendota.com/api/'
 }
