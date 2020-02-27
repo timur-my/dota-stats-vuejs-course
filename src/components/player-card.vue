@@ -10,13 +10,13 @@
                 <tr>
                   <th>Steam ID</th>
                   <th>Team</th>
-                  <th>Country code</th>
+                  <th>Country</th>
                   <th>Profile url</th>
                 </tr>
                 <tr>
                   <td width="20%">{{ player.steamid }}</td>
-                  <td width="20%">{{ player.team_name }}</td>
-                  <td width="20%">{{ player.loccountrycode }}</td>
+                  <td width="20%">{{ player.team_name ? player.team_name : 'No' }}</td>
+                  <td width="20%">{{ player.loccountrycode ? player.loccountrycode : 'Unknown' }}</td>
                   <td width="40%"><a :href="player.profileurl" target="_blank">{{ player.profileurl }}</a></td>
                 </tr>
               </table>
@@ -49,6 +49,7 @@ export default {
   methods: {
     onSelect (player) {
       this.$store.dispatch('getPlayerMatches', {account_id: player.account_id, limit: 30})
+        .then(() => this.$store.dispatch('showDialog', true))
     }
   },
   created: async function () {

@@ -11,6 +11,7 @@ export default new Vuex.Store({
     state: {
         players: [],
         playerMatches: [],
+        selectedPlayer: '',
         showDialog: false
     },
     actions: {
@@ -21,7 +22,7 @@ export default new Vuex.Store({
                 });
                 
                 if(res){
-                    commit(MUTATION_TYPES.GET_PRO_PLAYERS, res.data);
+                    commit(MUTATION_TYPES.GET_PRO_PLAYERS, res.data)
                 }
             } catch (e) {
                 console.log(e)
@@ -39,13 +40,12 @@ export default new Vuex.Store({
                 });
                 
                 if(res){
-                    commit(MUTATION_TYPES.GET_PLAYER_MATCHES, res.data);
-                    commit(MUTATION_TYPES.SHOW_DIALOG, true);
+                    commit(MUTATION_TYPES.GET_PLAYER_MATCHES, res.data)
+                    commit(MUTATION_TYPES.SET_SELECTED_PLAYER, params.account_id)
                 }
             } catch (e) {
                 console.log(e)
             }
-                
         },
 
         showDialog({commit}, showDialog) {
@@ -64,6 +64,10 @@ export default new Vuex.Store({
         [MUTATION_TYPES.SHOW_DIALOG](state, results) {
             state.showDialog = results;
         },
+
+        [MUTATION_TYPES.SET_SELECTED_PLAYER](state, results) {
+            state.selectedPlayer = results;
+        },
     },
     getters: {
         getProPlayers: (state) => state.players,
@@ -75,5 +79,7 @@ export default new Vuex.Store({
         getPlayerMatches: (state) => state.playerMatches,
 
         getShowDialog: (state) => state.showDialog,
+
+        getSelectedPlayer: (state) => state.selectedPlayer
     }
 })
