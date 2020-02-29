@@ -63,5 +63,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('./match-card-style.scss');
+  @import url('../styles/match-card-style.scss');
 </style>

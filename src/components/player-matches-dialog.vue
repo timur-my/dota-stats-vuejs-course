@@ -104,5 +104,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('./player-matches-dialog-style.scss');
+  @import url('../styles/player-matches-dialog-style.scss');
 </style>
