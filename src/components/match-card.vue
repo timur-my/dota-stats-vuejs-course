@@ -17,7 +17,7 @@
                   <th>Match ID</th>
                   <th>Victory side</th>
                   <th>Start_time</th>
-                  <th>Duration(sec)</th>
+                  <th>Duration</th>
                 </tr>
                 <tr>
                   <td width="20%">{{ match.match_id }}</td>
@@ -26,7 +26,7 @@
                     <span v-else class="dire">Dire</span>
                   </td>
                   <td width="20%">{{ convertTime(match.start_time) }}</td>
-                  <td width="20%">{{ match.duration }}</td>
+                  <td width="20%">{{ converSecToMin(match.duration) }}</td>
                 </tr>
               </table>
             </div>
@@ -45,6 +45,10 @@ export default {
       let current_datetime = new Date(time * 1000)
       let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
       return formatted_date
+    },
+    converSecToMin (sec) {
+      let min = Math.floor(sec / 60) + 'min ' + sec % 60 + 'sec'
+      return min
     }
   },
   computed: {
