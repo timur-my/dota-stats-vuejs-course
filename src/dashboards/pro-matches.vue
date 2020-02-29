@@ -1,14 +1,17 @@
 <template>
   <div>
-    Здесь будет список профессиональных матчей
+    <match-card/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import MatchCard from '../components/match-card.vue'
 
 export default {
   name: 'pro-matches',
-  components: {}
+  components: {
+    MatchCard
+  }
 }
 </script>

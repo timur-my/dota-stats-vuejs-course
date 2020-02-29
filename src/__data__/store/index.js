@@ -12,7 +12,8 @@ export default new Vuex.Store({
         players: [],
         playerMatches: [],
         selectedPlayer: '',
-        showDialog: false
+        showDialog: false,
+        matches: []
     },
     actions: {
         async getProPlayers({commit}) {
@@ -27,7 +28,6 @@ export default new Vuex.Store({
             } catch (e) {
                 console.log(e)
             }
-                
         },
 
         async getPlayerMatches({commit}, params) {
@@ -50,7 +50,22 @@ export default new Vuex.Store({
 
         showDialog({commit}, showDialog) {
             commit(MUTATION_TYPES.SHOW_DIALOG, showDialog)
-        }
+        },
+
+        async getProMatches({commit}) {
+            try {
+                const res = await axios.get(API_URLS.OPENDOTA_MAIN_URL + 'proMatches/', {
+                    params: {}
+                });
+                
+                if(res){
+                    commit(MUTATION_TYPES.GET_PRO_MATCHES, res.data)
+                }
+            } catch (e) {
+                console.log(e)
+            }
+                
+        },
     },
     mutations: {
         [MUTATION_TYPES.GET_PRO_PLAYERS](state, results) {
@@ -68,6 +83,10 @@ export default new Vuex.Store({
         [MUTATION_TYPES.SET_SELECTED_PLAYER](state, results) {
             state.selectedPlayer = results;
         },
+
+        [MUTATION_TYPES.GET_PRO_MATCHES](state, results) {
+            state.matches = results;
+        },
     },
     getters: {
         getProPlayers: (state) => state.players,
@@ -80,6 +99,10 @@ export default new Vuex.Store({
 
         getShowDialog: (state) => state.showDialog,
 
-        getSelectedPlayer: (state) => state.selectedPlayer
+        getSelectedPlayer: (state) => state.selectedPlayer,
+
+        getProMatchesSlice: (state) => lenght => {
+            return state.matches.slice(0, lenght)
+        }
     }
 })

@@ -102,5 +102,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('../components/pro-players.scss');
+  @import url('../components/pro-players-style.scss');
 </style>

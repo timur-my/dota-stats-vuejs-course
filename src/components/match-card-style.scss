@@ -5,16 +5,20 @@
   vertical-align: top;
 }
 
-.table-player-info {
+.table-match-info {
   width: 100%;
   text-align: center
-}
-
-.table-player-info a {
-  color: #e1e1e1 !important;
 }
 
 .md-title {
   text-align: center;
   margin-bottom: 10px !important;
+}
+
+.radiant {
+  color: #64dd17;
+}
+
+.dire {
+  color: red;
 }
