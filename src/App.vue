@@ -4,7 +4,7 @@
       <md-app md-waterfall md-mode="overlap">
         <md-app-toolbar class="md-primary md-large">
           <div class="md-toolbar-row">
-            <span class="md-title">
+            <span class="md-title main-icon">
               <img src="http://cdn.dota2.com/apps/dota2/images/nav/logo.png" alt="Icon">
             </span>
 
