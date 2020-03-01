@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: 'MacthCard',
+  name: 'MatchCard',
   methods: {
     convertTime (time) {
       let current_datetime = new Date(time * 1000)
@@ -47,8 +47,7 @@ export default {
       return formatted_date
     },
     converSecToMin (sec) {
-      let min = Math.floor(sec / 60) + 'min ' + sec % 60 + 'sec'
-      return min
+      return Math.floor(sec / 60) + 'min ' + sec % 60 + 'sec'
     }
   },
   computed: {
@@ -63,5 +62,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('../styles/match-card-style.scss');
+  @import url('../styles/match-card.scss');
 </style>

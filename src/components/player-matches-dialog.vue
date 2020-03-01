@@ -77,7 +77,6 @@ export default {
       return formatted_date
     },
     refreshMatches () {
-      const account_id = this.selectedPlayer
       this.$store.dispatch('getPlayerMatches', {
         account_id: this.selectedPlayer,
         limit: this.limit,
@@ -85,8 +84,7 @@ export default {
       })
     },
     converSecToMin (sec) {
-      let min = Math.floor(sec / 60) + 'min'
-      return min
+      return Math.floor(sec / 60) + 'min'
     }
   },
   computed: {
@@ -104,5 +102,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('../styles/player-matches-dialog-style.scss');
+  @import url('../styles/player-matches-dialog.scss');
 </style>

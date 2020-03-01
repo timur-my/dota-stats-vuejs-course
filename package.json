@@ -1,6 +1,6 @@
 {
-  "name": "vue-course",
-  "version": "1.0.0",
+  "name": "dota-stats",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {

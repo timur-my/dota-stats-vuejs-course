@@ -59,5 +59,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('../styles/player-card-style.scss');
+  @import url('../styles/player-card.scss');
 </style>
